@@ -1,6 +1,6 @@
 #!/bin/bash
 IMAGE=$1
-SIZE_OUTPUT=$(docker inspect -f "{{ .Size }}" $IMAGE)
+SIZE_OUTPUT=$(docker image inspect -f "{{ .Size }}" $IMAGE)
 
 if ! [[ "$SIZE_OUTPUT" =~ ^[0-9]+$ ]]
 then
