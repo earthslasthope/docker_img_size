@@ -25,7 +25,7 @@ sudo chmod +x /usr/local/bin/docker_img_size
 ## Usage
 
 ```sh
-docker_img_size [name ofimage]
+docker_img_size [name of image]
 ```
 
 ### Example
