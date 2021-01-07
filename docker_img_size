@@ -1,0 +1,12 @@
+#!/bin/bash
+IMAGE=$1
+SIZE_OUTPUT=$(docker inspect -f "{{ .Size }}" $IMAGE)
+
+if ! [[ "$SIZE_OUTPUT" =~ ^[0-9]+$ ]]
+then
+    echo ""
+    echo "Image $IMAGE does not exist on your machine"
+    exit 1
+fi
+
+echo "$SIZE_OUTPUT" | awk '{print $1/(1024*1024) " MB"}'
